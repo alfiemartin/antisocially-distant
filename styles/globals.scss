@@ -32,6 +32,10 @@
   margin: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 .HOME {
   font-size: 2rem;
   font-family: "Biotif-Black";
@@ -40,6 +44,7 @@
 
   .home-wrapper {
     width: 70%;
+    height: 100%;
     margin: 0 auto;
 
     .top-heading {
