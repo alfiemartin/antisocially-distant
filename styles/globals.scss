@@ -41,24 +41,43 @@ html {
   font-family: "Biotif-Black";
   width: 100vw;
   height: 100vh;
+  background: white;
+  position: relative;
 
   .home-wrapper {
-    width: 70%;
+    width: 55%;
     height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .top-heading {
       font-size: 6rem;
       font-family: "Biotif-Black";
       color: #58bbff;
       text-align: center;
+      background: #ffffff;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
+
+    .top-heading2 {
+      font-size: 6rem;
+      font-family: "Biotif-Black";
+      color: transparent;
+      text-align: center;
+      background: none;
+      display: block;
     }
 
     .heading-subtitle {
       font-family: "Biotif-ExtraBold";
+      color: #666666;
+      font-size: 2.5rem;
     }
 
     .results {
@@ -66,6 +85,7 @@ html {
         display: inline;
         font-family: "Biotif-Black";
         color: #58bbff;
+        margin-bottom: 50px;
 
         &:first-child {
           display: inline;
@@ -80,18 +100,75 @@ html {
 .question-cont {
   display: flex;
   flex-direction: row;
+  align-items: center;
   font-family: "Biotif-Medium";
   color: #666666;
 
-  & button {
-    font-family: "Biotif-Bold";
+  .amount-social h3 {
+    white-space: nowrap;
+  }
+
+  &.where-live,
+  &.amount-social {
+    h3 {
+      white-space: nowrap;
+      padding-right: 1.5rem;
+    }
+
+    div {
+      margin-top: 1.5rem;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 }
 
+.calculate-cont {
+  text-align: center;
+  color: #666666;
+
+  button {
+    border-radius: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+    font-style: italic;
+    text-decoration: underline;
+  }
+}
+
+button {
+  background: #58bbff;
+  font-size: 3rem;
+  height: 5rem;
+  padding: 1rem;
+  color: rgb(241, 241, 241);
+  font-family: "Biotif-Bold";
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 4rem;
+  border-radius: 1rem;
+}
+
+.slider-wrapper {
+  flex-grow: 1;
+}
+
 .bottom-alba-ad {
+  text-align: center;
+  color: #666666;
+  font-size: 1.3rem;
   form {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 1.4rem;
 
     input {
       border: 1px solid black;
@@ -100,21 +177,13 @@ html {
     }
   }
 
-  & h1 {
+  & > h1 {
     font-family: "Biotif-ExtraBold";
+    margin-bottom: 2rem;
   }
 
-  & h2 {
+  & > h2 {
     font-family: "Biotif-Medium";
+    font-size: 1.4rem;
   }
-}
-
-button {
-  background: rgb(20, 82, 102);
-  border-radius: 40px;
-  font-size: 2rem;
-}
-
-.slider-wrapper {
-  flex-grow: 1;
 }

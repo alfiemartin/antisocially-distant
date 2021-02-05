@@ -42,10 +42,12 @@ html {
   font-family: "Biotif-Black";
   width: 100vw;
   height: 100vh;
+  background: white;
+  position: relative;
 }
 
 .HOME .home-wrapper {
-  width: 70%;
+  width: 55%;
   height: 100%;
   margin: 0 auto;
   display: -webkit-box;
@@ -55,9 +57,8 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .HOME .home-wrapper .top-heading {
@@ -65,16 +66,34 @@ html {
   font-family: "Biotif-Black";
   color: #58bbff;
   text-align: center;
+  background: #ffffff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.HOME .home-wrapper .top-heading2 {
+  font-size: 6rem;
+  font-family: "Biotif-Black";
+  color: transparent;
+  text-align: center;
+  background: none;
+  display: block;
 }
 
 .HOME .home-wrapper .heading-subtitle {
   font-family: "Biotif-ExtraBold";
+  color: #666666;
+  font-size: 2.5rem;
 }
 
 .HOME .home-wrapper .results h1 {
   display: inline;
   font-family: "Biotif-Black";
   color: #58bbff;
+  margin-bottom: 50px;
 }
 
 .HOME .home-wrapper .results h1:first-child {
@@ -91,12 +110,71 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: "Biotif-Medium";
   color: #666666;
 }
 
-.question-cont button {
+.question-cont .amount-social h3 {
+  white-space: nowrap;
+}
+
+.question-cont.where-live h3, .question-cont.amount-social h3 {
+  white-space: nowrap;
+  padding-right: 1.5rem;
+}
+
+.question-cont.where-live div, .question-cont.amount-social div {
+  margin-top: 1.5rem;
+}
+
+.question-cont h3 {
+  font-size: 2rem;
+}
+
+.calculate-cont {
+  text-align: center;
+  color: #666666;
+}
+
+.calculate-cont button {
+  border-radius: 3rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 2rem;
+}
+
+.calculate-cont h3 {
+  font-size: 1.7rem;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+button {
+  background: #58bbff;
+  font-size: 3rem;
+  height: 5rem;
+  padding: 1rem;
+  color: #f1f1f1;
   font-family: "Biotif-Bold";
+  margin-left: 1rem;
+  margin-right: 1rem;
+  line-height: 4rem;
+  border-radius: 1rem;
+}
+
+.slider-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.bottom-alba-ad {
+  text-align: center;
+  color: #666666;
+  font-size: 1.3rem;
 }
 
 .bottom-alba-ad form {
@@ -106,6 +184,10 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.4rem;
 }
 
 .bottom-alba-ad form input {
@@ -114,23 +196,13 @@ html {
   height: 40px;
 }
 
-.bottom-alba-ad h1 {
+.bottom-alba-ad > h1 {
   font-family: "Biotif-ExtraBold";
+  margin-bottom: 2rem;
 }
 
-.bottom-alba-ad h2 {
+.bottom-alba-ad > h2 {
   font-family: "Biotif-Medium";
-}
-
-button {
-  background: #145266;
-  border-radius: 40px;
-  font-size: 2rem;
-}
-
-.slider-wrapper {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  font-size: 1.4rem;
 }
 /*# sourceMappingURL=globals.css.map */

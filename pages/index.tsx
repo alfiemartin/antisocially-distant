@@ -131,6 +131,7 @@ const Home = () => {
       <div className="HOME">
         <div className="home-wrapper">
           <h1 className="top-heading">Socially-Distant.me</h1>
+          <h1 className="top-heading2">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
             Find out how many social interactions you've missed out on in the
             past year
@@ -170,14 +171,23 @@ const Home = () => {
           </div>
           <div className="amount-social question-cont">
             <h3>How many days per week did you previously socialise?</h3>
-            <SocialiseSlider
-              step={1}
-              marks={numInteractionsLabels}
-              min={0}
-              max={7}
-            />
-            <div className="slider-wrapper"></div>
+            <div className="slider-wrapper">
+              <SocialiseSlider
+                step={1}
+                marks={numInteractionsLabels}
+                min={0}
+                max={7}
+              />
+            </div>
           </div>
+          <div className="calculate-cont">
+            <button>Calculate</button>
+            <h3>
+              Your result is based off of the raw data and calculations detailed
+              here
+            </h3>
+          </div>
+
           <div className="bottom-alba-ad">
             <h1>Have you been struggling with your mental health this year?</h1>
             <h2>Sign up to our mental health focused newsletter</h2>
@@ -186,6 +196,11 @@ const Home = () => {
               <button>SIGN UP</button>
             </form>
             <h2>Our Favourite app to help:</h2>
+            <img
+              src="https://propertyinspect.com/wp-content/uploads/pi-us/2017/10/itunes-app-store-logo.png"
+              alt="apple"
+              width={250}
+            />
           </div>
         </div>
       </div>
