@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Slider from "@material-ui/core/Slider";
 import withStyles from "@material-ui/core/styles/withStyles";
+import Template from "../components/Template";
 
 const livingArrangementsLabels = [
   {
@@ -130,67 +131,69 @@ const SocialiseSlider = withStyles({
 
 const Home = () => {
   return (
-    <div className="HOME">
-      <div className="home-wrapper">
-        <h1 className="top-heading">Socially-Distant.me</h1>
-        <h2 className="heading-subtitle">
-          Find out how many social interactions you've missed out on in the past
-          year
-        </h2>
-        <div className="results">
-          <h1 className="results">YOUR RESULTS: </h1>
-          <h1 className="answer">{"X"} Interactions</h1>
-        </div>
-        <div className="working-from-home question-cont">
-          <h3>
-            Have you been working/studying from home for more than 80% of the
-            pandemic?
-          </h3>
-          <button>YES</button>
-          <button>NO</button>
-        </div>
-        <div className="at-school question-cont">
-          <h3>Are you currently at school or university?</h3>
-          <button>YES</button>
-          <button>NO</button>
-        </div>
-        <div className="where-live question-cont">
-          <h3>Where do you live?</h3>
-          <div className="slider-wrapper">
-            <LivingSlider
+    <Template>
+      <div className="HOME">
+        <div className="home-wrapper">
+          <h1 className="top-heading">Socially-Distant.me</h1>
+          <h2 className="heading-subtitle">
+            Find out how many social interactions you've missed out on in the
+            past year
+          </h2>
+          <div className="results">
+            <h1 className="results">YOUR RESULTS: </h1>
+            <h1 className="answer">{"X"} Interactions</h1>
+          </div>
+          <div className="working-from-home question-cont">
+            <h3>
+              Have you been working/studying from home for more than 80% of the
+              pandemic?
+            </h3>
+            <button>YES</button>
+            <button>NO</button>
+          </div>
+          <div className="at-school question-cont">
+            <h3>Are you currently at school or university?</h3>
+            <button>YES</button>
+            <button>NO</button>
+          </div>
+          <div className="where-live question-cont">
+            <h3>Where do you live?</h3>
+            <div className="slider-wrapper">
+              <LivingSlider
+                step={1}
+                marks={livingArrangementsLabels}
+                min={0}
+                max={5}
+              />
+            </div>
+          </div>
+          <div className="use-public-trans question-cont">
+            <h3>Do you noramlly take public transport to work?</h3>
+            <button>YES</button>
+            <button>NO</button>
+          </div>
+          <div className="amount-social question-cont">
+            <h3>How many days per week did you previously socialise?</h3>
+            <SocialiseSlider
               step={1}
-              marks={livingArrangementsLabels}
-              min={0}
-              max={5}
+              marks={numInteractionsLabels}
+              min={-1}
+              max={7}
             />
+            <div className="slider-wrapper"></div>
+          </div>
+          <div className="bottom-alba-ad">
+            <h1>Have you been struggling with your mental health this year?</h1>
+            <h2>Sign up to our mental health focused newsletter</h2>
+            <form action="" className="form">
+              <input type="text" />
+              <button>SIGN UP</button>
+            </form>
+            <h2>Our Favourite app to help:</h2>
           </div>
         </div>
-        <div className="use-public-trans question-cont">
-          <h3>Do you noramlly take public transport to work?</h3>
-          <button>YES</button>
-          <button>NO</button>
-        </div>
-        <div className="amount-social question-cont">
-          <h3>How many days per week did you previously socialise?</h3>
-          <SocialiseSlider
-            step={1}
-            marks={numInteractionsLabels}
-            min={-1}
-            max={7}
-          />
-          <div className="slider-wrapper"></div>
-        </div>
-        <div className="bottom-alba-ad">
-          <h1>Have you been struggling with your mental health this year?</h1>
-          <h2>Sign up to our mental health focused newsletter</h2>
-          <form action="" className="form">
-            <input type="text" />
-            <button>SIGN UP</button>
-          </form>
-          <h2>Our Favourite app to help:</h2>
-        </div>
       </div>
-    </div>
+    </Template>
   );
 };
 
