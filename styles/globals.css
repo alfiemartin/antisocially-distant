@@ -1,7 +1,125 @@
+@font-face {
+  font-family: "Biotif-Black";
+  src: url("./fonts/Biotif-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Biotif-Bold";
+  src: url("./fonts/Biotif-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Biotif-ExtraBold";
+  src: url("./fonts/Biotif-ExtraBold.ttf") format("truetype");
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Biotif-Medium";
+  src: url("./fonts/Biotif-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 0;
   margin: 0;
+}
+
+.HOME {
+  font-size: 2rem;
+  font-family: "Biotif-Black";
+  width: 100vw;
+  height: 100vh;
+}
+
+.HOME .home-wrapper {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.HOME .home-wrapper .top-heading {
+  font-size: 6rem;
+  font-family: "Biotif-Black";
+  color: #58bbff;
+  text-align: center;
+}
+
+.HOME .home-wrapper .heading-subtitle {
+  font-family: "Biotif-ExtraBold";
+}
+
+.HOME .home-wrapper .results h1 {
+  display: inline;
+  font-family: "Biotif-Black";
+  color: #58bbff;
+}
+
+.HOME .home-wrapper .results h1:first-child {
+  display: inline;
+  font-family: "Biotif-Black";
+  color: #666666;
+}
+
+.question-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Biotif-Medium";
+  color: #666666;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.question-cont button {
+  font-family: "Biotif-Bold";
+}
+
+.bottom-alba-ad form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bottom-alba-ad form input {
+  border: 1px solid black;
+  width: 20%;
+  height: 40px;
+}
+
+.bottom-alba-ad h1 {
+  font-family: "Biotif-ExtraBold";
+}
+
+.bottom-alba-ad h2 {
+  font-family: "Biotif-Medium";
+}
+
+button {
+  background: #145266;
+  border-radius: 40px;
+  font-size: 2rem;
+}
+
+.slider-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 /*# sourceMappingURL=globals.css.map */
