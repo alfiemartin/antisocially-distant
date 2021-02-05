@@ -32,10 +32,6 @@ const livingArrangementsLabels = [
 
 const numInteractionsLabels = [
   {
-    value: -1,
-    label: "",
-  },
-  {
     value: 0,
     label: 0,
   },
@@ -177,7 +173,7 @@ const Home = () => {
             <SocialiseSlider
               step={1}
               marks={numInteractionsLabels}
-              min={-1}
+              min={0}
               max={7}
             />
             <div className="slider-wrapper"></div>
