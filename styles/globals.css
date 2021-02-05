@@ -33,10 +33,6 @@
   margin: 0;
 }
 
-html {
-  font-size: 12px;
-}
-
 .HOME {
   font-size: 2rem;
   font-family: "Biotif-Black";
@@ -47,7 +43,6 @@ html {
 }
 
 .HOME .home-wrapper {
-  width: 55%;
   height: 100%;
   margin: 0 auto;
   display: -webkit-box;
@@ -62,7 +57,6 @@ html {
 }
 
 .HOME .home-wrapper .top-heading {
-  font-size: 6rem;
   font-family: "Biotif-Black";
   color: #58bbff;
   text-align: center;
@@ -74,8 +68,12 @@ html {
   width: 100vw;
 }
 
-.HOME .home-wrapper .top-heading2 {
+.HOME .home-wrapper .top-heading-size {
   font-size: 6rem;
+  font-family: "Biotif-Black";
+}
+
+.HOME .home-wrapper .top-heading2 {
   font-family: "Biotif-Black";
   color: transparent;
   text-align: center;
@@ -86,7 +84,8 @@ html {
 .HOME .home-wrapper .heading-subtitle {
   font-family: "Biotif-ExtraBold";
   color: #666666;
-  font-size: 2.5rem;
+  font-size: 4rem;
+  line-height: 4rem;
 }
 
 .HOME .home-wrapper .results h1 {
@@ -94,6 +93,7 @@ html {
   font-family: "Biotif-Black";
   color: #58bbff;
   margin-bottom: 50px;
+  font-size: 5rem;
 }
 
 .HOME .home-wrapper .results h1:first-child {
@@ -147,9 +147,10 @@ html {
 }
 
 .calculate-cont h3 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-style: italic;
   text-decoration: underline;
+  font-family: "Biotif-Medium";
 }
 
 button {
@@ -204,5 +205,50 @@ button {
 .bottom-alba-ad > h2 {
   font-family: "Biotif-Medium";
   font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-wrapper {
+    width: 90%;
+  }
+  html {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .home-wrapper {
+    width: 70%;
+  }
+  html {
+    font-size: 9px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .home-wrapper {
+    width: 80%;
+  }
+  html {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .home-wrapper {
+    width: 70%;
+  }
+  html {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .home-wrapper {
+    width: 55%;
+  }
+  html {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=globals.css.map */

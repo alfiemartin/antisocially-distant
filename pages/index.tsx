@@ -130,16 +130,16 @@ const Home = () => {
     <Template>
       <div className="HOME">
         <div className="home-wrapper">
-          <h1 className="top-heading">Socially-Distant.me</h1>
-          <h1 className="top-heading2">Socially-Distant.me</h1>
+          <h1 className="top-heading top-heading-size">Socially-Distant.me</h1>
+          <h1 className="top-heading2 top-heading-size">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
             Find out how many social interactions you've missed out on in the
             past year
           </h2>
-          <div className="results">
+          {/* <div className="results">
             <h1 className="results">YOUR RESULTS: </h1>
             <h1 className="answer">{"X"} Interactions</h1>
-          </div>
+          </div> */}
           <div className="working-from-home question-cont">
             <h3>
               Have you been working/studying from home for more than 80% of the
