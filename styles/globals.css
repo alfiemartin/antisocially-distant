@@ -217,6 +217,9 @@ button {
   .slider-question div {
     width: 100%;
   }
+  .home-wrapper {
+    display: block !important;
+  }
 }
 
 @media only screen and (min-width: 600px) {
