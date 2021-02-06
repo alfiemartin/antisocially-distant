@@ -63,6 +63,53 @@ export const numInteractionsLabels = [
   },
 ];
 
+export const fromHomeLabels = [
+  {
+    value: 0,
+    label: "",
+  },
+  {
+    value: 1,
+    label: "10%",
+  },
+  {
+    value: 2,
+    label: "20%",
+  },
+  {
+    value: 3,
+    label: "30%",
+  },
+  {
+    value: 4,
+    label: "40%",
+  },
+  {
+    value: 5,
+    label: "50%",
+  },
+  {
+    value: 6,
+    label: "60%",
+  },
+  {
+    value: 7,
+    label: "70%",
+  },
+  {
+    value: 8,
+    label: "80%",
+  },
+  {
+    value: 9,
+    label: "90%",
+  },
+  {
+    value: 10,
+    label: "100%",
+  },
+];
+
 export const LivingSlider = withStyles({
   root: {
     color: "#58bbff",
@@ -101,6 +148,43 @@ export const LivingSlider = withStyles({
 })(Slider);
 
 export const SocialiseSlider = withStyles({
+  root: {
+    color: "#58bbff",
+    height: 8,
+  },
+  thumb: {
+    height: 24,
+    width: 24,
+    backgroundColor: "#fff",
+    border: "2px solid currentColor",
+    marginTop: -8,
+    marginLeft: -12,
+    "&:focus, &:hover, &$active": {
+      boxShadow: "inherit",
+    },
+  },
+  active: {},
+  valueLabel: {
+    left: "calc(-50% + 4px)",
+  },
+  track: {
+    height: 8,
+    borderRadius: 4,
+  },
+  rail: {
+    height: 8,
+    borderRadius: 4,
+  },
+  markLabel: {
+    fontSize: "1.2rem",
+    fontFamily: "Biotif-Medium"
+  },
+  mark: {
+    display: "none",
+  },
+})(Slider);
+
+export const FromHomeSlider = withStyles({
   root: {
     color: "#58bbff",
     height: 8,
