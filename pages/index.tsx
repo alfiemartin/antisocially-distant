@@ -172,7 +172,7 @@ const Home = () => {
               <input type="text" />
               <button>SIGN UP</button>
             </form>
-            <h2>Our Favourite app to help:</h2>
+            <h2 className="fav-app">Our Favourite app to help:</h2>
             <img
               src="https://propertyinspect.com/wp-content/uploads/pi-us/2017/10/itunes-app-store-logo.png"
               alt="apple"

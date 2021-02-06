@@ -169,11 +169,12 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 2rem;
 }
 
 .bottom-alba-ad form input {
   border: 1px solid black;
-  width: 20%;
+  width: 40%;
   height: 4rem;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -196,6 +197,10 @@ button {
 .bottom-alba-ad > h2 {
   font-family: "Biotif-Medium";
   font-size: 1.4rem;
+}
+
+.bottom-alba-ad > .fav-app {
+  margin-bottom: 0.8rem;
 }
 
 @media only screen and (max-width: 600px) {
