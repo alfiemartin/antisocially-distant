@@ -65,6 +65,12 @@
   display: block;
 }
 
+@media only screen and (max-width: 600px) {
+  .top-heading {
+    font-size: 5.6rem;
+  }
+}
+
 .heading-subtitle {
   font-family: "Biotif-ExtraBold";
   color: #666666;
@@ -159,6 +165,12 @@ button {
   font-size: 1.3rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .bottom-alba-ad {
+    margin-top: 4rem;
+  }
+}
+
 .bottom-alba-ad form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -172,6 +184,12 @@ button {
   margin-bottom: 2rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .bottom-alba-ad form {
+    margin-top: 1rem;
+  }
+}
+
 .bottom-alba-ad form input {
   border: 1px solid black;
   width: 40%;
@@ -180,14 +198,20 @@ button {
   border-bottom-left-radius: 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .bottom-alba-ad form input {
+    width: 60%;
+  }
+}
+
 .bottom-alba-ad form button {
-  margin: 0;
   height: 4rem;
   line-height: 2.6rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   border: 1px solid black;
-  border-left: none;
+  margin: 0 0;
+  border-left: 0;
 }
 
 .bottom-alba-ad > h1 {
