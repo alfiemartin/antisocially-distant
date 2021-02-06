@@ -72,6 +72,10 @@
   line-height: 4rem;
 }
 
+.questions-wrapper {
+  margin-bottom: 0;
+}
+
 .question-cont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,6 +89,8 @@
           align-items: center;
   font-family: "Biotif-Medium";
   color: #666666;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .question-cont h3 {
@@ -118,6 +124,7 @@
   border-radius: 3rem;
   padding-left: 4rem;
   padding-right: 4rem;
+  margin-bottom: 1rem;
 }
 
 .calculate-cont h3 {
@@ -167,17 +174,19 @@ button {
 .bottom-alba-ad form input {
   border: 1px solid black;
   width: 20%;
-  height: 40px;
+  height: 4rem;
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 
 .bottom-alba-ad form button {
   margin: 0;
-  height: 40px;
-  line-height: 30px;
+  height: 4rem;
+  line-height: 2.6rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border: 1px solid black;
+  border-left: none;
 }
 
 .bottom-alba-ad > h1 {

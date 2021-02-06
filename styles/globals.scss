@@ -65,12 +65,18 @@
   line-height: 4rem;
 }
 
+.questions-wrapper {
+  margin-bottom: 0;
+}
+
 .question-cont {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-family: "Biotif-Medium";
   color: #666666;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   h3 {
     width: 50%;
@@ -102,6 +108,7 @@
     border-radius: 3rem;
     padding-left: 4rem;
     padding-right: 4rem;
+    margin-bottom: 1rem;
   }
 
   h3 {
@@ -141,17 +148,19 @@ button {
     input {
       border: 1px solid black;
       width: 20%;
-      height: 40px;
+      height: 4rem;
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 1rem;
     }
 
     button {
       margin: 0;
-      height: 40px;
-      line-height: 30px;
+      height: 4rem;
+      line-height: 2.6rem;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      border: 1px solid black;
+      border-left: none;
     }
   }
 
