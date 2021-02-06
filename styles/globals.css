@@ -205,6 +205,21 @@ button {
   html {
     font-size: 6px;
   }
+  .where-live,
+  .amount-social {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .where-live h3,
+  .amount-social h3 {
+    width: 100%;
+  }
+  .where-live div,
+  .amount-social div {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 600px) {

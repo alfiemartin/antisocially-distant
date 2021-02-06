@@ -140,6 +140,7 @@ button {
   text-align: center;
   color: #666666;
   font-size: 1.3rem;
+
   form {
     display: flex;
     justify-content: center;
@@ -197,6 +198,19 @@ button {
 
   html {
     font-size: 6px;
+  }
+
+  .where-live,
+  .amount-social {
+    flex-direction: column;
+
+    h3 {
+      width: 100%;
+    }
+
+    div {
+      width: 100%;
+    }
   }
 }
 
