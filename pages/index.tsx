@@ -169,7 +169,7 @@ const Home = () => {
               className="form"
               onSubmit={(e) => e.preventDefault()}
             >
-              <input type="text" />
+              <input placeholder={"Enter your email"} type="text" />
               <button>SIGN UP</button>
             </form>
             <h2 className="fav-app">Our Favourite app to help:</h2>
