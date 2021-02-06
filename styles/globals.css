@@ -45,6 +45,7 @@
 .HOME .home-wrapper {
   height: 100%;
   margin: 0 auto;
+  padding: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,50 +57,19 @@
       justify-content: space-around;
 }
 
-.HOME .home-wrapper .top-heading {
+.top-heading {
   font-family: "Biotif-Black";
+  font-size: 6rem;
   color: #58bbff;
   text-align: center;
-  background: #ffffff;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-}
-
-.HOME .home-wrapper .top-heading-size {
-  font-size: 6rem;
-  font-family: "Biotif-Black";
-}
-
-.HOME .home-wrapper .top-heading2 {
-  font-family: "Biotif-Black";
-  color: transparent;
-  text-align: center;
-  background: none;
   display: block;
 }
 
-.HOME .home-wrapper .heading-subtitle {
+.heading-subtitle {
   font-family: "Biotif-ExtraBold";
   color: #666666;
   font-size: 4rem;
   line-height: 4rem;
-}
-
-.HOME .home-wrapper .results h1 {
-  display: inline;
-  font-family: "Biotif-Black";
-  color: #58bbff;
-  margin-bottom: 50px;
-  font-size: 5rem;
-}
-
-.HOME .home-wrapper .results h1:first-child {
-  display: inline;
-  font-family: "Biotif-Black";
-  color: #666666;
 }
 
 .question-cont {
@@ -117,17 +87,22 @@
   color: #666666;
 }
 
-.question-cont .amount-social h3 {
-  white-space: nowrap;
+.question-cont h3 {
+  width: 50%;
+}
+
+.question-cont div {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .question-cont.where-live h3, .question-cont.amount-social h3 {
-  white-space: nowrap;
   padding-right: 1.5rem;
-}
-
-.question-cont.where-live div, .question-cont.amount-social div {
-  margin-top: 1.5rem;
 }
 
 .question-cont h3 {
@@ -143,7 +118,6 @@
   border-radius: 3rem;
   padding-left: 4rem;
   padding-right: 4rem;
-  margin-bottom: 2rem;
 }
 
 .calculate-cont h3 {
@@ -188,18 +162,26 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 1.4rem;
 }
 
 .bottom-alba-ad form input {
   border: 1px solid black;
   width: 20%;
   height: 40px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.bottom-alba-ad form button {
+  margin: 0;
+  height: 40px;
+  line-height: 30px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .bottom-alba-ad > h1 {
   font-family: "Biotif-ExtraBold";
-  margin-bottom: 2rem;
 }
 
 .bottom-alba-ad > h2 {
