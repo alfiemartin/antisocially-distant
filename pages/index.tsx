@@ -65,63 +65,56 @@ const Home = () => {
     setButtonQuestionValues([...prevState]);
   };
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SBcncd";
+    script.async = true;
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <Template title="Socially Distant">
       <div className="HOME">
         <div className="home-wrapper">
           <h1 className="top-heading top-heading-size">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
-            Find out how many social interactions you've missed out on in the
-            past year
+            Find out how many social interactions you've missed out on in the past year
           </h2>
           <div className="questions-wrapper">
             <div className="at-school question-cont">
               <h3>Are you currently at school or university?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 0)}>
-                  YES
-                </button>
-                <button onClick={() => handleQuestionButton(false, 0)}>
-                  NO
-                </button>
+                <button onClick={() => handleQuestionButton(true, 0)}>YES</button>
+                <button onClick={() => handleQuestionButton(false, 0)}>NO</button>
               </div>
             </div>
             <div className="use-public-trans question-cont">
               <h3>Do you normally take public transport to work?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 1)}>
-                  YES
-                </button>
-                <button onClick={() => handleQuestionButton(false, 1)}>
-                  NO
-                </button>
+                <button onClick={() => handleQuestionButton(true, 1)}>YES</button>
+                <button onClick={() => handleQuestionButton(false, 1)}>NO</button>
               </div>
             </div>
             <div className="public-facing question-cont">
               <h3>Do you work in a customer facing job?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 2)}>
-                  YES
-                </button>
-                <button onClick={() => handleQuestionButton(false, 2)}>
-                  NO
-                </button>
+                <button onClick={() => handleQuestionButton(true, 2)}>YES</button>
+                <button onClick={() => handleQuestionButton(false, 2)}>NO</button>
               </div>
             </div>
             <div className="working-from-home question-cont slider-question">
-              <h3>
-                Have you been working/studying from home for more than 80% of
-                the pandemic?
-              </h3>
+              <h3>Have you been working/studying from home for more than 80% of the pandemic?</h3>
               <div className="slider-wrapper">
                 <FromHomeSlider
                   step={1}
                   marks={fromHomeLabels}
                   min={0}
                   max={10}
-                  onChange={(_, val) =>
-                    handleSlider(val as number, "working-from-home")
-                  }
+                  onChange={(_, val) => handleSlider(val as number, "working-from-home")}
                 />
               </div>
             </div>
@@ -133,9 +126,7 @@ const Home = () => {
                   marks={livingArrangementsLabels}
                   min={0}
                   max={5}
-                  onChange={(_, val) =>
-                    handleSlider(val as number, "where-live")
-                  }
+                  onChange={(_, val) => handleSlider(val as number, "where-live")}
                 />
               </div>
             </div>
@@ -147,28 +138,19 @@ const Home = () => {
                   marks={numInteractionsLabels}
                   min={0}
                   max={7}
-                  onChange={(_, val) =>
-                    handleSlider(val as number, "amount-social")
-                  }
+                  onChange={(_, val) => handleSlider(val as number, "amount-social")}
                 />
               </div>
             </div>
           </div>
           <div className="calculate-cont">
             <button>Calculate</button>
-            <h3>
-              Your result is based off of the raw data and calculations detailed
-              here
-            </h3>
+            <h3>Your result is based off of the raw data and calculations detailed here</h3>
           </div>
           <div className="bottom-alba-ad">
             <h1>Have you been struggling with your mental health this year?</h1>
             <h2>Sign up to our mental health focused newsletter</h2>
-            <form
-              action=""
-              className="form"
-              onSubmit={(e) => e.preventDefault()}
-            >
+            <form action="" className="form" onSubmit={(e) => e.preventDefault()}>
               <input placeholder={"Enter your email"} type="text" />
               <button>SIGN UP</button>
             </form>
