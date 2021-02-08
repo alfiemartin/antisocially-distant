@@ -268,7 +268,7 @@ const Home = () => {
             <h1>Have you been struggling with your mental health this year?</h1>
             <h2>Sign up to our mental health focused newsletter</h2>
             <Mailchimp
-              action="https://gmail.us7.list-manage.com/subscribe/post?u=b1c036d6b741d86d40ac0386f&amp;id=e72ab7f84d"
+              action="https://neurify.us17.list-manage.com/subscribe/post?u=c148319fd4fc1b8058860036c&amp;id=d404b4611a"
               fields={[
                 {
                   name: "EMAIL",
