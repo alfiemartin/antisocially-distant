@@ -39,33 +39,12 @@
   height: 100vh;
   background: white;
   position: relative;
-
-  .answer-section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .answer-inner {
-      width: 50%;
-      height: 50%;
-      background: #666666;
-      z-index: 10;
-      border-radius: 1rem;
-    }
-  }
+  overflow-x: hidden;
 
   .home-wrapper {
     height: 100%;
     margin: 0 auto;
     padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
   }
 }
 
@@ -86,10 +65,12 @@
   color: #666666;
   font-size: 4rem;
   line-height: 4rem;
+  margin-bottom: 4rem;
 }
 
 .questions-wrapper {
-  margin-bottom: 0;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .question-cont {
@@ -126,6 +107,7 @@
 .calculate-cont {
   text-align: center;
   color: #666666;
+  margin-bottom: 4rem;
 
   button {
     border-radius: 3rem;
@@ -220,21 +202,31 @@ button {
   }
 }
 
-// .results {
-//   h1 {
-//     display: inline;
-//     font-family: "Biotif-Black";
-//     color: #58bbff;
-//     margin-bottom: 50px;
-//     font-size: 5rem;
+.results-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    display: inline;
+    font-family: "Biotif-Black";
+    color: #58bbff;
+    font-size: 5rem;
 
-//     &:first-child {
-//       display: inline;
-//       font-family: "Biotif-Black";
-//       color: #666666;
-//     }
-//   }
-// }
+    &:first-child {
+      display: inline;
+      font-family: "Biotif-Black";
+      color: #666666;
+    }
+  }
+}
+
+.mailchimp-form {
+  position: relative;
+  .msg-alert {
+    position: absolute;
+    top: 45px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
   .home-wrapper {
@@ -245,7 +237,8 @@ button {
     font-size: 6px;
   }
 
-  .slider-question {
+  .slider-question,
+  .question-cont {
     flex-direction: column;
 
     h3 {
@@ -255,6 +248,10 @@ button {
     div {
       width: 100%;
     }
+  }
+
+  .question-cont div {
+    justify-content: flex-start;
   }
 
   .home-wrapper {

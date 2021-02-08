@@ -8,6 +8,8 @@ import {
   FromHomeSlider,
   fromHomeLabels,
 } from "../utilities/mySliders";
+import gsap from "gsap";
+import Mailchimp from "react-mailchimp-form";
 
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
@@ -49,6 +51,8 @@ const Home = () => {
   let schoolButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
   let publicTransButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
   let customerButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
+  let tempRef = useRef<GSAPTween>(null);
+  let calculateButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleSlider = (val: number, sliderName: SliderNameType) => {
     switch (sliderName) {
@@ -132,15 +136,18 @@ const Home = () => {
     const result = (studentOrWorkerVal + publicTransVal) * workHomeVal + extraCurricVal + walkingData;
 
     setResult(Math.floor(result));
+
+    tempRef.current = gsap.to(calculateButtonRef.current, { scale: 1.1, duration: 0.2 });
+    tempRef.current = gsap.to(calculateButtonRef.current, { scale: 1, duration: 0.2, delay: 0.2 });
   };
 
   const styleButtonPairs = (value: boolean, refArray) => {
     if (value === true) {
-      refArray.current[0].style.color = "red";
-      refArray.current[1].style.color = "white";
+      tempRef.current = gsap.to(refArray.current[0], { color: "purple" });
+      tempRef.current = gsap.to(refArray.current[1], { color: "white" });
     } else if (value === false) {
-      refArray.current[1].style.color = "red";
-      refArray.current[0].style.color = "white";
+      tempRef.current = gsap.to(refArray.current[1], { color: "purple" });
+      tempRef.current = gsap.to(refArray.current[0], { color: "white" });
     }
   };
 
@@ -159,18 +166,15 @@ const Home = () => {
   return (
     <Template title="Socially Distant">
       <div className="HOME">
-        {result !== 0 && (
-          <div className="answer-section">
-            <div className="answer-inner">
-              <h1>{result}</h1>
-            </div>
-          </div>
-        )}
         <div className="home-wrapper">
           <h1 className="top-heading top-heading-size">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
             Find out how many social interactions you've missed out on in the past year
           </h2>
+          <div className="results-cont">
+            <h1>YOUR RESULTS:⠀</h1>
+            <h1> {result ? result.toLocaleString() : "X"} Interactions</h1>
+          </div>
           <div className="questions-wrapper">
             <div className="at-school question-cont">
               <h3>Are you currently at school or university?</h3>
@@ -218,7 +222,7 @@ const Home = () => {
               </div>
             </div>
             <div className="working-from-home question-cont slider-question">
-              <h3>Have you been working/studying from home for more than 80% of the pandemic?</h3>
+              <h3>For what percentage of the last year have you been working/ studying from home?</h3>
               <div className="slider-wrapper">
                 <FromHomeSlider
                   step={1}
@@ -255,22 +259,34 @@ const Home = () => {
             </div>
           </div>
           <div className="calculate-cont">
-            <button onClick={handleCalculation}>Calculate</button>
+            <button ref={calculateButtonRef} onClick={handleCalculation}>
+              Calculate
+            </button>
             <h3>Your result is based off of the raw data and calculations detailed here</h3>
           </div>
           <div className="bottom-alba-ad">
             <h1>Have you been struggling with your mental health this year?</h1>
             <h2>Sign up to our mental health focused newsletter</h2>
-            <form action="" className="form" onSubmit={(e) => e.preventDefault()}>
-              <input placeholder={"Enter your email"} type="text" />
-              <button>SIGN UP</button>
-            </form>
-            <h2 className="fav-app">Our Favourite app to help:</h2>
-            <img
-              src="https://propertyinspect.com/wp-content/uploads/pi-us/2017/10/itunes-app-store-logo.png"
-              alt="apple"
-              width={250}
+            <Mailchimp
+              action="https://gmail.us7.list-manage.com/subscribe/post?u=b1c036d6b741d86d40ac0386f&amp;id=e72ab7f84d"
+              fields={[
+                {
+                  name: "EMAIL",
+                  placeholder: "Email",
+                  type: "email",
+                  required: true,
+                },
+              ]}
+              messages={{
+                success: "Thank you for subscribing!",
+                error: "An unexpected internal error has occurred.",
+                empty: "You must write an e-mail.",
+                button: "SIGN UP",
+              }}
+              className="mailchimp-form"
             />
+            <h2 className="fav-app">Our Favourite app to help:</h2>
+            <img src="./app-store.jpg" alt="apple" width={250} />
           </div>
         </div>
       </div>
