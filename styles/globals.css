@@ -42,6 +42,31 @@
   position: relative;
 }
 
+.HOME .answer-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.HOME .answer-section .answer-inner {
+  width: 50%;
+  height: 50%;
+  background: #666666;
+  z-index: 10;
+  border-radius: 1rem;
+}
+
 .HOME .home-wrapper {
   height: 100%;
   margin: 0 auto;

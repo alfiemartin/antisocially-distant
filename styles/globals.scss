@@ -40,6 +40,25 @@
   background: white;
   position: relative;
 
+  .answer-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .answer-inner {
+      width: 50%;
+      height: 50%;
+      background: #666666;
+      z-index: 10;
+      border-radius: 1rem;
+    }
+  }
+
   .home-wrapper {
     height: 100%;
     margin: 0 auto;

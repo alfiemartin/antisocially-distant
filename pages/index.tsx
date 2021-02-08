@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Template from "../components/Template";
 import {
   LivingSlider,
@@ -44,6 +44,12 @@ const Home = () => {
   const [whereLiveSliderVal, setWhereLiveSliderVal] = useState<LivingType>("");
   const [amountSocialSliderVal, setAmountSocialSliderVal] = useState<number>(0);
 
+  const [result, setResult] = useState<number>(0);
+
+  let schoolButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
+  let publicTransButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
+  let customerButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
+
   const handleSlider = (val: number, sliderName: SliderNameType) => {
     switch (sliderName) {
       case "amount-social":
@@ -61,7 +67,7 @@ const Home = () => {
   };
 
   const getInititalVariableValuesForCalc = () => {
-    let studentData, workData, excurrlicData, pubTransData, walkingData;
+    let studentData: number, workData: number, excurrlicData: number, pubTransData: number, walkingData: number;
     switch (whereLiveSliderVal) {
       case "Village":
         studentData = 100;
@@ -125,12 +131,41 @@ const Home = () => {
 
     const result = (studentOrWorkerVal + publicTransVal) * workHomeVal + extraCurricVal + walkingData;
 
-    console.log(result);
+    setResult(Math.floor(result));
   };
+
+  const styleButtonPairs = (value: boolean, refArray) => {
+    if (value === true) {
+      refArray.current[0].style.color = "red";
+      refArray.current[1].style.color = "white";
+    } else if (value === false) {
+      refArray.current[1].style.color = "red";
+      refArray.current[0].style.color = "white";
+    }
+  };
+
+  useEffect(() => {
+    styleButtonPairs(buttonQuestionValues[0], schoolButtonRefs);
+  }, [buttonQuestionValues[0]]);
+
+  useEffect(() => {
+    styleButtonPairs(buttonQuestionValues[1], publicTransButtonRefs);
+  }, [buttonQuestionValues[1]]);
+
+  useEffect(() => {
+    styleButtonPairs(buttonQuestionValues[2], customerButtonRefs);
+  }, [buttonQuestionValues[2]]);
 
   return (
     <Template title="Socially Distant">
       <div className="HOME">
+        {result !== 0 && (
+          <div className="answer-section">
+            <div className="answer-inner">
+              <h1>{result}</h1>
+            </div>
+          </div>
+        )}
         <div className="home-wrapper">
           <h1 className="top-heading top-heading-size">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
@@ -140,22 +175,46 @@ const Home = () => {
             <div className="at-school question-cont">
               <h3>Are you currently at school or university?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 0)}>YES</button>
-                <button onClick={() => handleQuestionButton(false, 0)}>NO</button>
+                <button ref={(el) => (schoolButtonRefs.current[0] = el)} onClick={() => handleQuestionButton(true, 0)}>
+                  YES
+                </button>
+                <button ref={(el) => (schoolButtonRefs.current[1] = el)} onClick={() => handleQuestionButton(false, 0)}>
+                  NO
+                </button>
               </div>
             </div>
             <div className="use-public-trans question-cont">
               <h3>Do you normally take public transport to work?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 1)}>YES</button>
-                <button onClick={() => handleQuestionButton(false, 1)}>NO</button>
+                <button
+                  ref={(el) => (publicTransButtonRefs.current[0] = el)}
+                  onClick={() => handleQuestionButton(true, 1)}
+                >
+                  YES
+                </button>
+                <button
+                  ref={(el) => (publicTransButtonRefs.current[1] = el)}
+                  onClick={() => handleQuestionButton(false, 1)}
+                >
+                  NO
+                </button>
               </div>
             </div>
             <div className="public-facing question-cont">
               <h3>Do you work in a customer facing job?</h3>
               <div>
-                <button onClick={() => handleQuestionButton(true, 2)}>YES</button>
-                <button onClick={() => handleQuestionButton(false, 2)}>NO</button>
+                <button
+                  ref={(el) => (customerButtonRefs.current[0] = el)}
+                  onClick={() => handleQuestionButton(true, 2)}
+                >
+                  YES
+                </button>
+                <button
+                  ref={(el) => (customerButtonRefs.current[1] = el)}
+                  onClick={() => handleQuestionButton(false, 2)}
+                >
+                  NO
+                </button>
               </div>
             </div>
             <div className="working-from-home question-cont slider-question">
