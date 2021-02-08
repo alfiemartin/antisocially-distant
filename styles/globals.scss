@@ -251,8 +251,7 @@ button {
     flex-direction: column !important;
   }
 
-  .slider-question,
-  .question-cont {
+  .slider-question {
     flex-direction: column;
 
     h3 {
@@ -262,14 +261,6 @@ button {
     div {
       width: 100%;
     }
-  }
-
-  .question-cont div {
-    justify-content: flex-start;
-  }
-
-  .home-wrapper {
-    display: block !important;
   }
 }
 
