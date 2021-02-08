@@ -10,9 +10,10 @@ import {
 } from "../utilities/mySliders";
 
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
+type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
 
 const getLivingFromValue = (value: number) => {
-  let livingWhere: string;
+  let livingWhere: LivingType;
   switch (value) {
     case 0:
       livingWhere = "";
@@ -40,7 +41,7 @@ const getLivingFromValue = (value: number) => {
 const Home = () => {
   const [buttonQuestionValues, setButtonQuestionValues] = useState(Array(3));
   const [workingHomeSliderVal, setWorkingHomeSliderVal] = useState<number>(0);
-  const [whereLiveSliderVal, setWhereLiveSliderVal] = useState<string>("");
+  const [whereLiveSliderVal, setWhereLiveSliderVal] = useState<LivingType>("");
   const [amountSocialSliderVal, setAmountSocialSliderVal] = useState<number>(0);
 
   const handleSlider = (val: number, sliderName: SliderNameType) => {
@@ -59,22 +60,73 @@ const Home = () => {
     }
   };
 
+  const getInititalVariableValuesForCalc = () => {
+    let studentData, workData, excurrlicData, pubTransData, walkingData;
+    switch (whereLiveSliderVal) {
+      case "Village":
+        studentData = 100;
+        workData = 42;
+        excurrlicData = 146;
+        pubTransData = 57;
+        walkingData = 971;
+        break;
+      case "Town":
+        studentData = 527;
+        workData = 221;
+        excurrlicData = 767;
+        pubTransData = 1590;
+        walkingData = 5119;
+        break;
+      case "Small City":
+        studentData = 954;
+        workData = 401;
+        excurrlicData = 1391;
+        pubTransData = 5219;
+        walkingData = 9275;
+        break;
+      case "Medium City":
+        studentData = 2263;
+        workData = 951;
+        excurrlicData = 3296;
+        pubTransData = 29242;
+        walkingData = 21982;
+        break;
+      case "Large City":
+        studentData = 3571;
+        workData = 1500;
+        excurrlicData = 5200;
+        pubTransData = 73000;
+        walkingData = 34680;
+        break;
+      default:
+        studentData = 0;
+        workData = 0;
+        excurrlicData = 0;
+        pubTransData = 0;
+        walkingData = 0;
+    }
+    return [studentData, workData, excurrlicData, pubTransData, walkingData];
+  };
+
   const handleQuestionButton = (val: boolean, questionNum: number) => {
     let prevState = buttonQuestionValues;
     prevState[questionNum] = val;
     setButtonQuestionValues([...prevState]);
   };
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SBcncd";
-    script.async = true;
+  const handleCalculation = () => {
+    let [studentData, workData, excurrlicData, pubTransData, walkingData] = getInititalVariableValuesForCalc();
 
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+    workData = buttonQuestionValues[2] ? workData * 30 : workData; //if work with customers
+    let studentOrWorkerVal = buttonQuestionValues[0] ? studentData : workData; //if in school
+    let publicTransVal = buttonQuestionValues[1] ? pubTransData : pubTransData / 10; //if take public transport
+    let workHomeVal = workingHomeSliderVal / 10;
+    let extraCurricVal = excurrlicData * amountSocialSliderVal;
+
+    const result = (studentOrWorkerVal + publicTransVal) * workHomeVal + extraCurricVal + walkingData;
+
+    console.log(result);
+  };
 
   return (
     <Template title="Socially Distant">
@@ -144,7 +196,7 @@ const Home = () => {
             </div>
           </div>
           <div className="calculate-cont">
-            <button>Calculate</button>
+            <button onClick={handleCalculation}>Calculate</button>
             <h3>Your result is based off of the raw data and calculations detailed here</h3>
           </div>
           <div className="bottom-alba-ad">
