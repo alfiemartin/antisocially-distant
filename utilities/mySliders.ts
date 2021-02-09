@@ -1,5 +1,6 @@
 import Slider from "@material-ui/core/Slider";
 import withStyles from "@material-ui/core/styles/withStyles";
+import { NONAME } from "dns";
 
 export const livingArrangementsLabels = [
   {
@@ -188,6 +189,7 @@ export const FromHomeSlider = withStyles({
   root: {
     color: "#58bbff",
     height: 8,
+    pointerEvents: "none"
   },
   thumb: {
     height: 24,
@@ -199,6 +201,7 @@ export const FromHomeSlider = withStyles({
     "&:focus, &:hover, &$active": {
       boxShadow: "inherit",
     },
+    pointerEvents: "all"
   },
   active: {},
   valueLabel: {
@@ -211,6 +214,7 @@ export const FromHomeSlider = withStyles({
   rail: {
     height: 8,
     borderRadius: 4,
+    pointerEvents: "none",
   },
   markLabel: {
     fontSize: "1.2rem",
