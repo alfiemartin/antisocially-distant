@@ -178,7 +178,7 @@ const Home = () => {
             Find out how many human interactions you've missed out on in the past year
           </h2>
           <div className="results-cont">
-            <h1>YOUR RESULT:⠀</h1>
+            <h1>YOUR RESULT:{result ? "" : "⠀"}</h1>
             <h1> {result ? result.toLocaleString() : "???"} Interactions</h1>
           </div>
           <div className="questions-wrapper">
