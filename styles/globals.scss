@@ -67,6 +67,7 @@
   font-size: rem;
   line-height: 4rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .questions-wrapper {
@@ -204,6 +205,10 @@ button {
   }
 }
 
+.spacer {
+  height: 12rem;
+}
+
 .results-cont {
   display: flex;
   justify-content: center;
@@ -228,12 +233,6 @@ button {
     position: absolute;
     top: 45px;
   }
-}
-
-.main {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
 }
 
 body,

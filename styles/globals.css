@@ -70,6 +70,7 @@
   font-size: rem;
   line-height: 4rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .questions-wrapper {
@@ -229,6 +230,10 @@ button:hover {
   margin-top: 7rem;
 }
 
+.spacer {
+  height: 12rem;
+}
+
 .results-cont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,12 +266,6 @@ button:hover {
 .mailchimp-form .msg-alert {
   position: absolute;
   top: 45px;
-}
-
-.main {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
-  height: 100%;
 }
 
 body,

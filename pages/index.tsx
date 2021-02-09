@@ -175,7 +175,7 @@ const Home = () => {
         <div className="home-wrapper">
           <h1 className="top-heading top-heading-size">Socially-Distant.me</h1>
           <h2 className="heading-subtitle">
-            Find out how many social interactions you've missed out on in the past year
+            Find out how many human interactions you've missed out on in the past year
           </h2>
           <div className="results-cont">
             <h1>YOUR RESULT:⠀</h1>
@@ -299,6 +299,7 @@ const Home = () => {
             <a href="https://albamind.link/download">
               <img src="./app-store.jpg" alt="apple" width={250} />
             </a>
+            <div className="spacer"></div>
           </div>
         </div>
       </div>
