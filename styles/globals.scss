@@ -64,9 +64,10 @@
 .heading-subtitle {
   font-family: "Biotif-ExtraBold";
   color: #666666;
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 4rem;
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .questions-wrapper {
@@ -211,13 +212,17 @@ button {
     display: inline;
     font-family: "Biotif-Black";
     color: #58bbff;
-    font-size: 5rem;
+    font-size: 4rem;
 
     &:first-child {
       display: inline;
       font-family: "Biotif-Black";
       color: #666666;
     }
+  }
+
+  h1:last-child {
+    font-size: 5.5rem;
   }
 }
 

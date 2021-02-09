@@ -163,6 +163,10 @@ const Home = () => {
     styleButtonPairs(buttonQuestionValues[2], customerButtonRefs);
   }, [buttonQuestionValues[2]]);
 
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [result]);
+
   return (
     <Template title="Socially Distant">
       <div className="HOME">
@@ -172,8 +176,8 @@ const Home = () => {
             Find out how many social interactions you've missed out on in the past year
           </h2>
           <div className="results-cont">
-            <h1>YOUR RESULTS:⠀</h1>
-            <h1> {result ? result.toLocaleString() : "X"} Interactions</h1>
+            <h1>YOUR RESULT:⠀</h1>
+            <h1> {result ? result.toLocaleString() : "???"} Interactions</h1>
           </div>
           <div className="questions-wrapper">
             <div className="at-school question-cont">
