@@ -137,6 +137,8 @@ const Home = () => {
 
     setResult(Math.floor(result));
 
+    document.querySelector(".HOME").scrollTo({ top: 0, behavior: "smooth" });
+
     tempRef.current = gsap.to(calculateButtonRef.current, { scale: 1.1, duration: 0.2 });
     tempRef.current = gsap.to(calculateButtonRef.current, { scale: 1, duration: 0.2, delay: 0.2 });
   };
@@ -164,7 +166,7 @@ const Home = () => {
   }, [buttonQuestionValues[2]]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0 });
+    document.querySelector("body").scrollTo(0, 0);
   }, [result]);
 
   return (
@@ -266,7 +268,11 @@ const Home = () => {
             <button ref={calculateButtonRef} onClick={handleCalculation}>
               Calculate
             </button>
-            <h3>Your result is based off of the raw data and calculations detailed here</h3>
+            <h3>
+              <a href="https://albamind.link/socially-distant-research">
+                Your result is based off of the raw data and calculations detailed here
+              </a>
+            </h3>
           </div>
           <div className="bottom-alba-ad">
             <h1>Have you been struggling with your mental health this year?</h1>
@@ -285,12 +291,14 @@ const Home = () => {
                 success: "Thank you for subscribing!",
                 error: "An unexpected internal error has occurred.",
                 empty: "You must write an e-mail.",
-                button: "SIGN UP",
+                button: "Sign Up",
               }}
               className="mailchimp-form"
             />
             <h2 className="fav-app">Our Favourite app to help:</h2>
-            <img src="./app-store.jpg" alt="apple" width={250} />
+            <a href="https://albamind.link/download">
+              <img src="./app-store.jpg" alt="apple" width={250} />
+            </a>
           </div>
         </div>
       </div>

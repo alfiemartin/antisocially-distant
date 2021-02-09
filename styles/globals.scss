@@ -64,10 +64,9 @@
 .heading-subtitle {
   font-family: "Biotif-ExtraBold";
   color: #666666;
-  font-size: 3.2rem;
+  font-size: rem;
   line-height: 4rem;
   margin-bottom: 4rem;
-  text-align: center;
 }
 
 .questions-wrapper {
@@ -109,7 +108,7 @@
 .calculate-cont {
   text-align: center;
   color: #666666;
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 
   button {
     border-radius: 3rem;
@@ -201,6 +200,7 @@ button {
 
   & > .fav-app {
     margin-bottom: 0.8rem;
+    margin-top: 7rem;
   }
 }
 
@@ -212,17 +212,13 @@ button {
     display: inline;
     font-family: "Biotif-Black";
     color: #58bbff;
-    font-size: 4rem;
+    font-size: 5rem;
 
     &:first-child {
       display: inline;
       font-family: "Biotif-Black";
       color: #666666;
     }
-  }
-
-  h1:last-child {
-    font-size: 5.5rem;
   }
 }
 
@@ -306,4 +302,9 @@ button {
   html {
     font-size: 10px;
   }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
