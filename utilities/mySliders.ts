@@ -115,6 +115,7 @@ export const LivingSlider = withStyles({
   root: {
     color: "#58bbff",
     height: 8,
+    pointerEvents: "none"
   },
   thumb: {
     height: 24,
@@ -126,6 +127,7 @@ export const LivingSlider = withStyles({
     "&:focus, &:hover, &$active": {
       boxShadow: "inherit",
     },
+    pointerEvents: "all"
   },
   active: {},
   valueLabel: {
@@ -152,6 +154,7 @@ export const SocialiseSlider = withStyles({
   root: {
     color: "#58bbff",
     height: 8,
+    pointerEvents: "none"
   },
   thumb: {
     height: 24,
@@ -163,6 +166,7 @@ export const SocialiseSlider = withStyles({
     "&:focus, &:hover, &$active": {
       boxShadow: "inherit",
     },
+    pointerEvents: "all"
   },
   active: {},
   valueLabel: {
