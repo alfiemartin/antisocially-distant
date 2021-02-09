@@ -230,6 +230,11 @@ button {
   }
 }
 
+.main {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media only screen and (max-width: 600px) {
   .home-wrapper {
     width: 90%;
