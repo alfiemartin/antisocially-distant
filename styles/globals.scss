@@ -233,6 +233,12 @@ button {
 .main {
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+
+body,
+html {
+  height: 100%;
 }
 
 @media only screen and (max-width: 600px) {
