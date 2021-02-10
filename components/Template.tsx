@@ -1,5 +1,6 @@
-import React, { ReactChild } from "react";
+import React, { ReactChild, useEffect } from "react";
 import Head from "next/head";
+import ReactGA from "react-ga";
 
 interface Props {
   children: ReactChild;
@@ -7,6 +8,10 @@ interface Props {
 }
 
 const Template = ({ children, title }: Props) => {
+  useEffect(() => {
+    ReactGA.pageview(location.pathname);
+  }, []);
+
   return (
     <>
       <Head>

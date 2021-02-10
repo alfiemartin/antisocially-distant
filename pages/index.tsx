@@ -11,7 +11,6 @@ import {
 import gsap from "gsap";
 import Mailchimp from "react-mailchimp-form";
 import CountUp from "react-countup";
-
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
 
