@@ -16,7 +16,7 @@ import ReactGA from "react-ga";
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
 
-ReactGA.initialize("UA-189392345-1");
+ReactGA.initialize("UA-181959947-3");
 
 const getLivingFromValue = (value: number) => {
   let livingWhere: LivingType;
