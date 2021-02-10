@@ -12,6 +12,7 @@ const Template = ({ children, title }: Props) => {
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+        <link rel="icon" href="Socially-Distant.png"></link>
       </Head>
       <main className="main">{children}</main>
     </>
