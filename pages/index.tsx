@@ -17,7 +17,6 @@ type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
 
 ReactGA.initialize("UA-189392345-1");
-ReactGA.pageview(window.location.pathname + window.location.search);
 
 const getLivingFromValue = (value: number) => {
   let livingWhere: LivingType;
@@ -175,6 +174,10 @@ const Home = () => {
 
     setCountingResult(1);
   }, [result]);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <Template title="Socially Distant">
