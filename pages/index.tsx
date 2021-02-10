@@ -12,9 +12,6 @@ import gsap from "gsap";
 import Mailchimp from "react-mailchimp-form";
 import CountUp from "react-countup";
 
-import { firebase } from "@firebase/app";
-import analytics from "@firebase/analytics";
-
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
 
@@ -57,19 +54,6 @@ const Home = () => {
   let customerButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
   let tempRef = useRef<GSAPTween>(null);
   let calculateButtonRef = useRef<HTMLButtonElement>(null);
-
-  var firebaseConfig = {
-    apiKey: "AIzaSyDhlCn4w6zhE7JWKaVTUp8n98wERqz_HDo",
-    authDomain: "socially-distant-966dd.firebaseapp.com",
-    projectId: "socially-distant-966dd",
-    storageBucket: "socially-distant-966dd.appspot.com",
-    messagingSenderId: "119882447158",
-    appId: "1:119882447158:web:371dbf21b316fe7ffbdb97",
-    measurementId: "G-H5SFDK2BQ7",
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
   const handleSlider = (val: number, sliderName: SliderNameType) => {
     switch (sliderName) {
