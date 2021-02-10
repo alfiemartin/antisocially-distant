@@ -10,6 +10,7 @@ import {
 } from "../utilities/mySliders";
 import gsap from "gsap";
 import Mailchimp from "react-mailchimp-form";
+import CountUp from "react-countup";
 
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
@@ -47,7 +48,7 @@ const Home = () => {
   const [amountSocialSliderVal, setAmountSocialSliderVal] = useState<number>(0);
 
   const [result, setResult] = useState<number>(0);
-
+  const [countingResult, setCountingResult] = useState<number>(0);
   let schoolButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
   let publicTransButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
   let customerButtonRefs = useRef<Array<HTMLButtonElement>>([null]);
@@ -167,6 +168,8 @@ const Home = () => {
 
   useEffect(() => {
     document.querySelector("body").scrollTo(0, 0);
+
+    setCountingResult(1);
   }, [result]);
 
   return (
@@ -178,8 +181,16 @@ const Home = () => {
             Find out how many human interactions you've missed out on in the past year
           </h2>
           <div className="results-cont">
-            <h1>YOUR RESULT:{result ? "" : "⠀"}</h1>
-            <h1> {result ? result.toLocaleString() : "???"} Interactions</h1>
+            <h1>YOUR RESULT:⠀</h1>
+            <h1>
+              {result ? (
+                <CountUp start={0} end={result} duration={4} formattingFn={(val) => val.toLocaleString()} />
+              ) : (
+                "???"
+              )}
+              ⠀Interactions
+            </h1>
+            <h1></h1>
           </div>
           <div className="questions-wrapper">
             <div className="at-school question-cont">
