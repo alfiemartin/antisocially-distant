@@ -11,9 +11,12 @@ import {
 import gsap from "gsap";
 import Mailchimp from "react-mailchimp-form";
 import CountUp from "react-countup";
+import ReactGA from "react-ga";
 
 type SliderNameType = "amount-social" | "working-from-home" | "where-live";
 type LivingType = "" | "Village" | "Town" | "Small City" | "Medium City" | "Large City";
+
+ReactGA.initialize("G-CXK6HW5PSP");
 
 const getLivingFromValue = (value: number) => {
   let livingWhere: LivingType;
@@ -171,6 +174,10 @@ const Home = () => {
 
     setCountingResult(1);
   }, [result]);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   return (
     <Template title="Socially Distant">
