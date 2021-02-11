@@ -16,7 +16,7 @@ const Template = ({ children, title }: Props) => {
           name="description"
           content="Find out how many human interactions you've missed out on in the last year."
         />
-        <meta property="og:image" content="./Socially-Distant.png" />
+        <meta property="og:image" content="https://socially-distant.me/Socially-Distant.png" />
         <meta property="og:image:width" content="180" />
         <meta property="og:image:height" content="180" />
         <link rel="icon" href="Socially-Distant.png"></link>
