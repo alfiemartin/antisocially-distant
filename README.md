@@ -1,4 +1,4 @@
-socially-distant.me
+**www.socially-distant.me**
 
 A basic site estimating the number of human interactions one has missed out on over the past year due to Coronavirus and lockdowns.
 
